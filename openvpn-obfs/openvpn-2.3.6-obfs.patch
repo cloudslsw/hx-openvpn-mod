@@ -95,8 +95,8 @@
  /*
   * Convert sockflags/getaddr_flags into getaddr_flags
   */
---- src/openvpn/socket.h.orig	2012-12-20 16:56:00.000000000 +0800
-+++ src/openvpn/socket.h	2013-03-07 23:35:02.442141344 +0800
+--- openvpn-2.3.6/src/openvpn/socket.h.orig	2012-12-20 16:56:00.000000000 +0800
++++ openvpn-2.3.6/src/openvpn/socket.h	2013-03-07 23:35:02.442141344 +0800
 @@ -36,6 +36,11 @@
  #include "socks.h"
  #include "misc.h"
