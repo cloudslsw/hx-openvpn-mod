@@ -1,5 +1,5 @@
---- sample/sample-config-files/client.conf.orig	2014-11-29 22:59:45.000000000 +0800
-+++ sample/sample-config-files/client.conf	2014-12-15 15:32:16.094436634 +0800
+--- openvpn-2.3.6/sample/sample-config-files/client.conf.orig	2014-11-29 22:59:45.000000000 +0800
++++ openvpn-2.3.6/sample/sample-config-files/client.conf	2014-12-15 15:32:16.094436634 +0800
 @@ -122,3 +122,7 @@
  
  # Silence repeating messages
@@ -8,8 +8,8 @@
 +# flow confusion number
 +;confusion-num 7
 +
---- sample/sample-config-files/server.conf.orig	2014-11-29 22:59:45.000000000 +0800
-+++ sample/sample-config-files/server.conf	2014-12-15 15:32:16.098436634 +0800
+--- openvpn-2.3.6/sample/sample-config-files/server.conf.orig	2014-11-29 22:59:45.000000000 +0800
++++ openvpn-2.3.6/sample/sample-config-files/server.conf	2014-12-15 15:32:16.098436634 +0800
 @@ -302,3 +302,6 @@
  # sequential messages of the same message
  # category will be output to the log.
@@ -17,8 +17,8 @@
 +
 +# flow confusion number
 +;confusion-num 7
---- sample/sample-windows/sample.ovpn.orig	2014-11-29 22:59:45.000000000 +0800
-+++ sample/sample-windows/sample.ovpn	2014-12-15 15:32:16.098436634 +0800
+--- openvpn-2.3.6/sample/sample-windows/sample.ovpn.orig	2014-11-29 22:59:45.000000000 +0800
++++ openvpn-2.3.6/sample/sample-windows/sample.ovpn	2014-12-15 15:32:16.098436634 +0800
 @@ -101,3 +101,7 @@
  # moderate verbosity
  verb 4
@@ -27,8 +27,8 @@
 +# flow confusion number
 +;confusion-num 7
 +
---- src/openvpn/init.c.orig	2014-11-29 23:00:35.000000000 +0800
-+++ src/openvpn/init.c	2014-12-15 15:32:16.098436634 +0800
+--- openvpn-2.3.6/src/openvpn/init.c.orig	2014-11-29 23:00:35.000000000 +0800
++++ openvpn-2.3.6/src/openvpn/init.c	2014-12-15 15:32:16.098436634 +0800
 @@ -2661,7 +2661,8 @@
  			   c->options.rcvbuf,
  			   c->options.sndbuf,
@@ -39,8 +39,8 @@
  }
  
  /*
---- src/openvpn/options.c.orig	2014-11-29 23:00:35.000000000 +0800
-+++ src/openvpn/options.c	2014-12-15 15:32:16.102436633 +0800
+--- openvpn-2.3.6/src/openvpn/options.c.orig	2014-11-29 23:00:35.000000000 +0800
++++ openvpn-2.3.6/src/openvpn/options.c	2014-12-15 15:32:16.102436633 +0800
 @@ -7002,6 +7002,10 @@
        options->use_peer_id = true;
        options->peer_id = atoi(p[1]);
@@ -52,8 +52,8 @@
    else
      {
        int i;
---- src/openvpn/options.h.orig	2014-11-29 23:00:35.000000000 +0800
-+++ src/openvpn/options.h	2014-12-15 15:32:16.102436633 +0800
+--- openvpn-2.3.6/src/openvpn/options.h.orig	2014-11-29 23:00:35.000000000 +0800
++++ openvpn-2.3.6/src/openvpn/options.h	2014-12-15 15:32:16.102436633 +0800
 @@ -597,6 +597,8 @@
  
    bool use_peer_id;
@@ -63,8 +63,8 @@
  };
  
  #define streq(x, y) (!strcmp((x), (y)))
---- src/openvpn/socket.c.orig	2014-11-29 23:00:35.000000000 +0800
-+++ src/openvpn/socket.c	2014-12-15 15:28:20.000000000 +0800
+--- openvpn-2.3.6/src/openvpn/socket.c.orig	2014-11-29 23:00:35.000000000 +0800
++++ openvpn-2.3.6/src/openvpn/socket.c	2014-12-15 15:28:20.000000000 +0800
 @@ -1369,7 +1369,8 @@
  			 int rcvbuf,
  			 int sndbuf,
@@ -165,8 +165,8 @@
  
        /* the overlapped write will signal this event on I/O completion */
        ASSERT (ResetEvent (sock->writes.overlapped.hEvent));
---- src/openvpn/socket.h.orig	2014-11-29 23:00:35.000000000 +0800
-+++ src/openvpn/socket.h	2014-12-15 15:19:02.000000000 +0800
+--- openvpn-2.3.6/src/openvpn/socket.h.orig	2014-11-29 23:00:35.000000000 +0800
++++ openvpn-2.3.6/src/openvpn/socket.h	2014-12-15 15:19:02.000000000 +0800
 @@ -248,6 +248,8 @@
  #ifdef ENABLE_DEBUG
    int gremlin; /* --gremlin bits */
