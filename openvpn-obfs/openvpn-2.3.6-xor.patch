@@ -17,8 +17,7 @@ And it won't take much reasource to do that.
  create mode 100644 src/openvpn/xor.c
  create mode 100644 src/openvpn/xor.h
 
-diff --git openvpn-2.3.6/src/openvpn/Makefile.am.orig openvpn-2.3.6/src/openvpn/Makefile.am
-index 2e602f1..0e9b682 100644
+
 --- openvpn-2.3.6/src/openvpn/Makefile.am.orig
 +++ openvpn-2.3.6/src/openvpn/Makefile.am
 @@ -111,6 +111,7 @@ openvpn_SOURCES = \
@@ -29,8 +28,7 @@ index 2e602f1..0e9b682 100644
  	cryptoapi.h cryptoapi.c
  openvpn_LDADD = \
  	$(top_builddir)/src/compat/libcompat.la \
-diff --git openvpn-2.3.6/src/openvpn/Makefile.in.orig openvpn-2.3.6/src/openvpn/Makefile.in
-index 686f79b..9fd5d9d 100644
+
 --- openvpn-2.3.6/src/openvpn/Makefile.in.orig
 +++ openvpn-2.3.6/src/openvpn/Makefile.in
 @@ -149,8 +149,8 @@ am__openvpn_SOURCES_DIST = base64.c base64.h basic.h buffer.c buffer.h \
@@ -73,8 +71,7 @@ index 686f79b..9fd5d9d 100644
  
  .c.o:
  @am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-diff --git openvpn-2.3.6/src/openvpn/forward.c.orig openvpn-2.3.6/src/openvpn/forward.c
-index 7f0d083..0f5ff78 100644
+
 --- openvpn-2.3.6/src/openvpn/forward.c.orig
 +++ openvpn-2.3.6/src/openvpn/forward.c
 @@ -39,6 +39,7 @@
@@ -113,8 +110,7 @@ index 7f0d083..0f5ff78 100644
  
  #ifdef ENABLE_SOCKS
  	    /* Undo effect of prepend */
-diff --git openvpn-2.3.6/src/openvpn/options.c.orig openvpn-2.3.6/src/openvpn/options.c
-index 5bddca4..c3dc2f1 100644
+
 --- openvpn-2.3.6/src/openvpn/options.c.orig
 +++ openvpn-2.3.6/src/openvpn/options.c
 @@ -6537,6 +6537,11 @@ add_option (struct options *options,
@@ -129,8 +125,7 @@ index 5bddca4..c3dc2f1 100644
    else if (streq (p[0], "extra-certs") && p[1])
      {
        VERIFY_PERMISSION (OPT_P_GENERAL);
-diff --git openvpn-2.3.6/src/openvpn/options.h.orig openvpn-2.3.6/src/openvpn/options.h
-index af9a47f..186302e 100644
+
 --- openvpn-2.3.6/src/openvpn/options.h.orig
 +++ openvpn-2.3.6/src/openvpn/options.h
 @@ -521,6 +521,7 @@ struct options
@@ -141,9 +136,8 @@ index af9a47f..186302e 100644
  
    int ns_cert_type; /* set to 0, NS_CERT_CHECK_SERVER, or NS_CERT_CHECK_CLIENT */
    unsigned remote_cert_ku[MAX_PARMS];
-diff --git openvpn-2.3.6/src/openvpn/xor.c.orig openvpn-2.3.6/src/openvpn/xor.c
+
 new file mode 100644
-index 0000000..dc02044
 --- /dev/null
 +++ openvpn-2.3.6/src/openvpn/xor.c
 @@ -0,0 +1,73 @@
@@ -220,9 +214,8 @@ index 0000000..dc02044
 +
 +  return size;
 +}
-diff --git openvpn-2.3.6/src/openvpn/xor.h.orig openvpn-2.3.6/src/openvpn/xor.h
+
 new file mode 100644
-index 0000000..020c70a
 --- /dev/null
 +++ openvpn-2.3.6/src/openvpn/xor.h
 @@ -0,0 +1,48 @@
